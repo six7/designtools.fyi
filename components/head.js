@@ -44,6 +44,24 @@ const Head = props => (
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <style dangerouslySetInnerHTML={{__html: `
+      @font-face {
+        font-family: 'UntitledSans';
+        font-weight: normal;
+        font-style: normal;
+        src: url('/static/fonts/UntitledSans-Regular.woff') format('woff'),
+          url('/static/fonts/UntitledSans-Regular.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'UntitledSans';
+        font-weight: bold;
+        font-style: normal;
+        src: url('/static/fonts/UntitledSans-Bold.woff') format('woff'),
+          url('/static/fonts/UntitledSans-Bold.woff2') format('woff2');
+      }
+    }
+    `}}/>
   </NextHead>
 )
 

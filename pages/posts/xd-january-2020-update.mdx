@@ -1,0 +1,21 @@
+import { withRouter } from 'next/router'
+import BlogPost from '../../components/layouts/blog-post'
+
+export const meta = {
+  published: true,
+  publishedAt: '2020-01-28',
+  category: 'Adobe XD',
+  title: 'XD adds Content-Aware Layout',
+  summary:
+    'January update brings padding to components',
+  image: '/static/EPen-EjXUAAAR7_.jpg',
+  readmore: 'https://theblog.adobe.com/xd-january-2020-content-aware-layout-plugin-apis/'
+}
+
+export default withRouter(({ children, router }) => (
+  <BlogPost path={router.pathname} meta={meta}>
+    {children}
+  </BlogPost>
+))
+
+The January update of Adobe XD is here and with it comes a first iteration of Content aware layout - XD's implementation of smart layout.

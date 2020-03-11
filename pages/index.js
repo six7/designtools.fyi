@@ -4,8 +4,10 @@ import Link from 'next/link'
 import pagination from 'pagination'
 import Layout from '../components/layouts/default'
 import Post from '../components/blog-index-item'
+import { PillButton, Box } from "@modulz/radix"
 import blogposts from '../posts/index'
 import { siteMeta } from '../blog.config'
+import { Grid } from "@modulz/radix"
 
 const Blog = ({ router, page = 1 }) => {
   const paginator = new pagination.SearchPaginator({
@@ -24,23 +26,30 @@ const Blog = ({ router, page = 1 }) => {
   } = paginator.getPaginationData()
   const results = _range(fromResult - 1, toResult)
 
+  const categories = 
+    [...new Set(blogposts
+      .map(post => post.category))]
+
   return (
     <Layout pageTitle="Blog" path={router.pathname}>
-      <header>
-        <h1>Blog</h1>
-      </header>
-
+      <Box mb={4}>
+        {categories.map((category, index) => <PillButton key={index}>{category}</PillButton>)}
+      </Box>
+      <Grid gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))" gridGap={1}>
       {blogposts
         .filter((_post, index) => results.indexOf(index) > -1)
         .map((post, index) => (
           <Post
             key={index}
+            category={post.category}
+            image={post.image}
             title={post.title}
             summary={post.summary}
             date={post.publishedAt}
             path={post.path}
           />
         ))}
+        </Grid>
 
       <ul>
         {previous && (
@@ -65,11 +74,6 @@ const Blog = ({ router, page = 1 }) => {
           </li>
         )}
       </ul>
-      <style jsx>{`
-        header {
-          margin-bottom: 3em;
-        }
-      `}</style>
     </Layout>
   )
 }

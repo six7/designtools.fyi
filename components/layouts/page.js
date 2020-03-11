@@ -9,11 +9,6 @@ function Page({ meta, children }) {
         </header>
         <div>{children}</div>
       </article>
-      <style jsx>{`
-        header {
-          margin-bottom: 2em;
-        }
-      `}</style>
     </Layout>
   )
 }

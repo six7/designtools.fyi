@@ -1,25 +1,23 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import { Text, Flex, Button } from "@modulz/radix"
 
 const NextPrevPost = ({ title, path, position }) => {
   const isNext = position === 'next'
   return (
-    <>
+    <Flex flexDirection="column" alignItems={isNext ? 'flex-end' : 'flex-start'} style={{gridColumn: isNext ? '2 / 2' : ''}}>
+      <Text mb={1} fontWeight="bold" size={1}>Read {position} post </Text>
       <Link href={path}>
-        <a>
-          <small>Read {position} post </small>
+        <Button as="a">
           {title}
-        </a>
+        </Button>
       </Link>
-      <style jsx>{`
-        a {
-          display: flex;
-          flex-direction: column;
-          ${isNext ? 'text-align: right;' : ''}
+      <style jsx global>{`
+        .page-link {
           ${isNext ? 'grid-column: 2 / 2;' : ''}
         }
       `}</style>
-    </>
+    </Flex>
   )
 }
 

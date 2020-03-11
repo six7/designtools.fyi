@@ -14,15 +14,25 @@ export default () => (
         word-break: normal;
         word-wrap: normal;
         line-height: 1.5;
-
+        
         -moz-tab-size: 4;
         -o-tab-size: 4;
         tab-size: 4;
-
+        
         -webkit-hyphens: none;
         -moz-hyphens: none;
         -ms-hyphens: none;
         hyphens: none;
+
+        box-sizing: border-box;
+        font-family: RadixDuo,"Liberation Mono",Menlo,Consolas,monospace;
+        font-size: 13px;
+        line-height: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 3px;
+        background-color: hsl(208,100%,95%);
+        color: hsl(208,99%,44%);
       }
 
       pre[class*='language-'] {

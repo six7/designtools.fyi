@@ -1,24 +1,15 @@
-import Profile from './profile'
+import { Button, Flex, Box, Container, Link } from "@modulz/radix"
 
 function Footer() {
   return (
-    <footer>
-      <Profile className="profile-footer" />
-
-      <p>
-        Proudly built with <a href="https://nextjs.org">Next.js</a> -{' '}
-        <a href="/feed.json">RSS Feed</a>
-      </p>
-      <style jsx>{`
-        footer {
-          padding: 1em 0;
-        }
-
-        p {
-          margin-top: 2em;
-        }
-      `}</style>
-    </footer>
+    <Box as="footer" bg="black" textColor="white">
+      <Container size={2}>
+        <Flex mt={8} py={8} justifyContent="space-between">
+          <Box><Link textColor="white" href="/feed.json">RSS Feed</Link></Box>
+          <Box><Link textColor="white" href="https://twitter.com/designtoolsfyi">Twitter</Link></Box>
+        </Flex>
+      </Container>
+    </Box>
   )
 }
 

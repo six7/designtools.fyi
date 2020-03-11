@@ -1,20 +1,27 @@
 import Link from 'next/link'
+import { Flex, Box } from "@modulz/radix"
 
 const Nav = () => (
-  <nav>
-    <Link href="/about">
-      <a>About</a>
-    </Link>
+  <Flex as="nav">
+    {/* <Box mx={3}>
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+    </Box>
+    <Box mx={3}>
+      <Link href="/about">
+        <a>Tools</a>
+      </Link>
+    </Box> */}
     <style jsx>{`
-      nav {
-        display: flex;
-      }
-
-      a:not(:last-child) {
-        margin-right: 1em;
-      }
-    `}</style>
-  </nav>
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        color: black;
+      }`
+      }</style>
+  </Flex>
 )
 
 export default Nav

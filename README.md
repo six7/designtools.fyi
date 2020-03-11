@@ -50,3 +50,8 @@ Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.
 now
 ```
 # designtools.fyi
+
+
+# Feeds
+https://theblog.adobe.com/tag/xd-updates/feed/
+https://figmareleases.blogspot.com/feeds/posts/default?alt=rss

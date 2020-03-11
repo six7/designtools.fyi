@@ -21,6 +21,7 @@ const feed = {
     id: `${siteMeta.siteUrl}${post.path}`,
     url: `${siteMeta.siteUrl}${post.path}`,
     title: post.title,
+    category: post.category,
     content_text: `${post.summary} - ${siteMeta.siteUrl}${post.path}`,
     summary: post.summary,
     image: `${siteMeta.siteUrl}${post.image}`,

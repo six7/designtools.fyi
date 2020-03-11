@@ -1,0 +1,36 @@
+import { withRouter } from 'next/router'
+import BlogPost from '../../components/layouts/blog-post'
+
+export const meta = {
+  published: true,
+  publishedAt: '2020-02-06',
+  category: 'Figma',
+  title: 'Figma Updates from #config2020',
+  summary:
+    'Adds Selection Colors, Auto-Layout with stretch, and in-pane plugins.',
+  image: '/static/AUTOLAYOUT_2_1040x512.gif',
+  readmore: 'https://releases.figma.com/2020/02/whats-new.html'
+}
+
+export default withRouter(({ children, router }) => (
+  <BlogPost path={router.pathname} meta={meta}>
+    {children}
+  </BlogPost>
+))
+
+Figma held their first ever user conference called Config and took the chance to present a couple new features for Figma.
+
+### Selection Colors
+Up until now, when you wanted to change the colors of multiple elements you had to select the elements on their own. With Selection Colors Figma gives you an option to change all used colors in your current selection. 
+
+<img src="/static/COLOR_SELECTION_1024x512.gif" className="img-fluid" />
+
+### Auto Layout with stretch
+One highly requested feature was to give Auto Layout the option to dynamically resize the container holding the items, and Figma delivered! Starting with the recent update users will be able to set the children to stretch so that they fill the whole width of the container, making elements that use Auto Layout resizable.
+
+<img src="/static/AUTOLAYOUT_2_1040x512.gif" className="img-fluid" />
+
+### Plugin Inspector
+Figma comes a step closer to XD and introduces a Plugin section in the properties panel - for now Plugin developers can only include a button, but that should improve as the feature progresses. What's great about this feature is that you can now see which plugins were used on the selected node, allowing others that don't have that plugin installed to install it with one click.
+
+<img src="/static/PlugINspector_1012x506_TWITTER.png" className="img-fluid" />
